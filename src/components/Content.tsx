@@ -9,16 +9,16 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
 
   const contentMapping: Record<string, { title: string; link: string; img: string }[]> = {
     '3D Art': [
-      { title: '3D Model 1', link: '/3d-model-1', img: '/imgs/3d-1.jpg' },
+      { title: '3D Model 1', link: '/3d-model-1', img: './src/assets/imgs/3d-1.jpg' },
     ],
     '2D Art': [
-      { title: '2D Sketch 1', link: '/2d-sketch-1', img: '/imgs/2d-1.png' },
+      { title: '2D Sketch 1', link: '/2d-sketch-1', img: './src/assets/imgs/2d-1.png' },
     ],
     'Voice Acting': [
-      { title: 'Voice Clip 1', link: '/voice-clip-1', img: '/imgs/va-1.jpg' },
+      { title: 'Voice Clip 1', link: '/voice-clip-1', img: './src/assets/imgs/va-1.jpg' },
     ],
     'Games': [
-      { title: 'Space Defenders', link: './pages/game1.html', img: '../images/gm-tbn.png' },
+      { title: 'Space Defenders', link: '../pages/game1.html', img: '../images/gm-tbn.png' },
     ],
   };
 
