@@ -1,0 +1,169 @@
+/* General body and HTML styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'FanwoodTextRegular';
+   font-weight: normal;
+   font-style: normal;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgb(109, 109, 137)); /* Default gradient background */
+}
+
+/* Header styles */
+.Header {
+  background: rgb(109, 109, 137);
+  width: 100vw;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2; /* Ensures header is above other content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 60px; /* Fixed height for the header */
+}
+
+/* Main container for layout */
+.Main {
+  display: flex;
+  flex-direction: row; /* Sidebar and content are in a row */
+  height: calc(100vh - 60px); /* Account for the header height */
+  margin-top: 60px; /* Push content below the header */
+}
+
+/* Sidebar styles (now below header) */
+.Sidebar {
+  width: 60px;
+  background-color: rgb(109, 109, 137);
+  transition: width 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative; /* Sidebar moves along with the rest of the page */
+  height: 100%; /* Full height of the screen */
+}
+
+.Sidebar.expanded {
+  width: 200px; /* Sidebar expands on hover */
+}
+
+/* Sidebar items */
+.Sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.3s ease;
+  width: 100%; /* Ensure items occupy full width of the sidebar */
+}
+
+.Sidebar-item:hover {
+  background-color: rgb(80, 80, 109); /* Hover effect */
+  transform: translateX(5px); /* Slight hover motion */
+}
+
+/* Icon and text within sidebar */
+.Sidebar-icon {
+  width: 24px; /* Set a fixed size for icons */
+  height: 24px;
+  margin-right: 10px;
+  transition: margin-right 0.3s ease;
+}
+
+.Sidebar-text {
+  font-size: 22px;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+.Sidebar.expanded .Sidebar-text {
+  opacity: 1;
+}
+
+.Sidebar.expanded .Sidebar-icon {
+  margin-right: 15px;
+}
+
+/* Content Grid Styles */
+.ContentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-left: 60px; /* Offset content to the right of the sidebar */
+  flex: 1;
+  overflow-y: auto;
+  transition: background-image 0.3s ease; /* Smooth background transition */
+}
+
+/* Individual Content Item */
+.ContentItem {
+  position: relative;
+  text-decoration: none;
+  width: 200px; /* Set default size */
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ContentItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Overlay text on hover */
+.Overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+}
+
+/* Modal to display the expanded image centered */
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Transparent dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.ModalContent {
+  text-align: center;
+}
+
+.ModalImage {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.ModalText {
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+  font-weight: bold;
+}
