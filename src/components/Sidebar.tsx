@@ -12,7 +12,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onOptionClick }) => {
 
   // Update options to use image paths
   const options = [
-    { id: '3D Art', icon: '../imgs/3d-icon.png' },  // Path to your 3D Art icon
+    { id: '3D fart', icon: '../imgs/3d-icon.png' },  // Path to your 3D Art icon
     { id: '2D Art', icon: '../imgs/2d-icon.png' },  // Path to your 2D Art icon
     { id: 'Voice Acting', icon: '../imgs/va-icon.png' },  // Path to your Voice Acting icon
     { id: 'Games', icon: '../imgs/gm-icon.png' },  // Path to your Games icon
