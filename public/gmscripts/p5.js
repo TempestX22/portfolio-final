@@ -1,7 +1,7 @@
 const startsfx = new Audio('./sfx/start_sfx.wav');
 const losesfx = new Audio('./sfx/lose_sfx.wav');
 const buttonsfx = new Audio('./sfx/mellau__button-click-3.wav');
-const lasersfx = new Audio('sfx\laser_sfx.wav');
+const lasersfx = new Audio('./sfx/laser_sfx.wav');
 const winsfx = new Audio('./sfx/win_sfx.wav');
 const bgm = new Audio('./sfx/Jeremy Blake - Powerup.mp3');
 let canShoot = false;

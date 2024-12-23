@@ -19,7 +19,7 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
       { title: 'Voice Clip 1', link: '/voice-clip-1', img: '/imgs/va-1.jpg' },
     ],
     'Games': [
-      { title: 'Space Defenders', link: '../pages/game1.html', img: 'images/gm-tbn.png' },
+      { title: 'Space Defenders', link: '/game1.html', img: 'images/gm-tbn.png' },
     ],
   };
 
