@@ -1,26 +1,9 @@
-// 
-// const redarrow = document.getElementById('red-arrow');
-// const greenarrow = document.getElementById('green-arrow');
-// const audio = new Audio('sfx/dream__univ_lyon3.wav');
-
-// // Set red arrow's background image dynamically
-// redarrow.style.backgroundImage = "url('images/redarrow.png')";
-
-// start.addEventListener('click', () => {
-//   audio.play(); // Play the sound
-
-//   // Hide the start button after 1 second and change the background
-//   setTimeout(() => {
-//     start.style.display = 'none';
-//     // document.body.classList.add('new-background');
-//   }, 1000);
-// });
-const startsfx = new Audio('../sfx/start_sfx.wav');
-const losesfx = new Audio('../sfx/lose_sfx.wav');
-const buttonsfx = new Audio('../sfx/mellau__button-click-3.wav');
-const lasersfx = new Audio('../sfx/laser_sfx.wav');
-const winsfx = new Audio('../sfx/win_sfx.wav');
-const bgm = new Audio('../sfx/Jeremy Blake - Powerup.mp3');
+const startsfx = new Audio('./sfx/start_sfx.wav');
+const losesfx = new Audio('./sfx/lose_sfx.wav');
+const buttonsfx = new Audio('./sfx/mellau__button-click-3.wav');
+const lasersfx = new Audio('sfx\laser_sfx.wav');
+const winsfx = new Audio('./sfx/win_sfx.wav');
+const bgm = new Audio('./sfx/Jeremy Blake - Powerup.mp3');
 let canShoot = false;
 
 let t = 0;
