@@ -3,8 +3,8 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'FanwoodTextRegular';
-   font-weight: normal;
-   font-style: normal;
+  font-weight: normal;
+  font-style: normal;
   background-size: cover;
   background-position: center;
   color: black;
@@ -128,6 +128,17 @@ body, html {
   object-fit: cover;
   border-radius: 10px;
   transition: all 0.3s ease;
+}
+
+/* Styling for audio content */
+.ContentItem audio {
+  width: 100%; /* Audio player spans the full width of the container */
+  margin-top: 10px; /* Space between the audio player and the title */
+  border-radius: 5px;
+  background-color: #333; /* Dark background for the audio player */
+  padding: 5px;
+  box-sizing: border-box; /* Prevents padding from affecting the width */
+  outline: none; /* Removes the default outline */
 }
 
 /* Overlay text on hover */

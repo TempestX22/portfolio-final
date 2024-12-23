@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 interface ContentProps {
   selectedOption: string | null;
 }
@@ -8,33 +7,33 @@ interface ContentProps {
 const Content: React.FC<ContentProps> = ({ selectedOption }) => {
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
 
-  const contentMapping: Record<string, { title: string; link: string; img: string }[]> = {
+  const contentMapping: Record<string, { title: string; link: string; img: string; audio: string }[]> = {
     '3D Art': [
-      { title: '3D Model 1', link: '/3d-model-1', img: '/imgs/3d-1.jpg' },
+      { title: '3D Model 1', link: '/3d-model-1', img: '/imgs/3d-1.jpg', audio: '' },
     ],
     '2D Art': [
-      { title: '2D Sketch 1', link: '/2d-sketch-1', img: '/imgs/2d-1.png' },
+      { title: '2D Sketch 1', link: '/2d-sketch-1', img: '/imgs/2d-1.png', audio: '' },
     ],
     'Voice Acting': [
-      { title: 'Voice Clip 1', link: '/voice-clip-1', img: '/imgs/va-1.jpg' },
+      { title: 'Voice Clip 1', link: '', img: '', audio: '/audio/va-1.mp3' },
     ],
     'Games': [
-      { title: 'Space Defenders', link: '/game1.html', img: 'images/gm-tbn.png' },
+      { title: 'Space Defenders', link: '/game1.html', img: '/images/gm-tbn.png', audio: '' },
     ],
   };
 
-    // Handle "About Me" separately
-    if (selectedOption === 'About Me') {
-      return (
-        <div className="AboutMe">
-          <img src="/imgs/me-pic.jpg" alt="My Photo" className="AboutMe-Image" />
-          <h1 className="AboutMe-Name">Junior Esteban</h1>
-          <p className="AboutMe-Description">
-            I've grown up playing video games and I wish to make games that people will enjoy in the future.
-          </p>
-        </div>
-      );
-    }
+  // Handle "About Me" separately
+  if (selectedOption === 'About Me') {
+    return (
+      <div className="AboutMe">
+        <img src="/imgs/me-pic.jpg" alt="My Photo" className="AboutMe-Image" />
+        <h1 className="AboutMe-Name">Junior Esteban</h1>
+        <p className="AboutMe-Description">
+          I've grown up playing video games and I wish to make games that people will enjoy in the future.
+        </p>
+      </div>
+    );
+  }
 
   const items = selectedOption ? contentMapping[selectedOption] : [];
 
@@ -58,8 +57,16 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
     <div className="ContentGrid">
       {items.map((item, index) => (
         <div key={index} className="ContentItem">
-          {/* For non-2D Art and 3D Art items, the link should function normally */}
-          {selectedOption === 'Games' ? (
+          {/* For Voice Acting, render audio player instead of image */}
+          {selectedOption === 'Voice Acting' ? (
+            <div>
+              <h3>{item.title}</h3>
+              <audio controls>
+                <source src={item.audio} type="audio/mp3" />
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          ) : selectedOption === 'Games' ? (
             <a href={item.link}>
               <img
                 src={item.img}

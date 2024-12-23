@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <div
       className="App"
       style={{
-        backgroundImage: selectedIcon ? `url(${selectedIcon})` : 'none',
+        backgroundImage: selectedIcon && selectedOption !== 'Voice Acting' ? `url(${selectedIcon})` : 'none',
         backgroundSize: '100px 100px', // Adjust size of repeated icons
         backgroundRepeat: 'repeat', // Tiled effect
         backgroundPosition: 'center',
