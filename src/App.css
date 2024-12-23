@@ -35,6 +35,14 @@ body, html {
   margin-top: 60px; /* Push content below the header */
 }
 
+.App {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5); /* Fallback color */
+  transition: background 0.3s ease; /* Smooth background transitions */
+}
+
 /* Sidebar styles (now below header) */
 .Sidebar {
   width: 60px;
@@ -166,4 +174,37 @@ body, html {
   font-size: 18px;
   margin-top: 10px;
   font-weight: bold;
+}
+
+.AboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: calc(100vw - 60px); /* Center within the available space, accounting for the header height */
+  padding: 20px;
+}
+
+.AboutMe-Image {
+  width: 300px; /* Adjust size of the image */
+  height: 300px;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.AboutMe-Name {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: aliceblue;
+}
+
+.AboutMe-Description {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
 }

@@ -23,6 +23,19 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
     ],
   };
 
+    // Handle "About Me" separately
+    if (selectedOption === 'About Me') {
+      return (
+        <div className="AboutMe">
+          <img src="/imgs/me-pic.jpg" alt="My Photo" className="AboutMe-Image" />
+          <h1 className="AboutMe-Name">Junior Esteban</h1>
+          <p className="AboutMe-Description">
+            I've grown up playing video games and I wish to make games that people will enjoy in the future.
+          </p>
+        </div>
+      );
+    }
+
   const items = selectedOption ? contentMapping[selectedOption] : [];
 
   // Handle click to expand image for 2D Art and 3D Art

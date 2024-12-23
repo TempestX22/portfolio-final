@@ -6,28 +6,28 @@ import './App.css';
 
 const App: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const [selectedIcon, setSelectedIcon] = useState<string | null>(null);
 
-  const backgrounds: Record<string, string> = {
-    '3D Art': 'url(../images/bg-1.jpg)',
-    '2D Art': 'url(./images/bg-2.jpg)',
-    'Voice Acting': 'url(./imgs/bg-1.jpg)',
-    'Games': 'url(./images/bg-4.jpg)',
-  };
-
-  const handleOptionClick = (option: string) => {
+  const handleOptionClick = (option: string, icon: string) => {
     setSelectedOption(option);
+    setSelectedIcon(icon);
   };
 
   return (
     <div
       className="App"
       style={{
-        backgroundImage: selectedOption ? backgrounds[selectedOption] : 'none',
+        backgroundImage: selectedIcon ? `url(${selectedIcon})` : 'none',
+        backgroundSize: '100px 100px', // Adjust size of repeated icons
+        backgroundRepeat: 'repeat', // Tiled effect
+        backgroundPosition: 'center',
       }}
     >
       <Header />
       <div className="Main">
-        <Sidebar onOptionClick={handleOptionClick} />
+        <Sidebar
+          onOptionClick={(option, icon) => handleOptionClick(option, icon)}
+        />
         <Content selectedOption={selectedOption} />
       </div>
     </div>
