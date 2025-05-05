@@ -29,7 +29,12 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
         <img src="/imgs/me-pic.jpg" alt="My Photo" className="AboutMe-Image" />
         <h1 className="AboutMe-Name">Junior Esteban</h1>
         <p className="AboutMe-Description">
-          I've grown up playing video games and I wish to make games that people will enjoy in the future.
+        I'm a Dominican-born creative who moved to the U.S at a young age, bringing with me a deep love for art and storytelling. 
+        From childhood, I was drawn to the imaginative world of game development and the creativity it inspires. Over the years, 
+        that passion has grown into a drive to create immersive, visually compelling experiences. I enjoy exploring different 
+        artistic avenues, constantly pushing myself to learn and evolve. Whether through drawing, design, or interactive projects, 
+        I aim to bring a unique perspective and energy to everything I create.
+
         </p>
       </div>
     );
