@@ -15,14 +15,16 @@ const App: React.FC = () => {
 
   return (
     <div
-      className="App"
-      style={{
-        backgroundImage: selectedIcon && selectedOption !== 'Voice Acting' ? `url(${selectedIcon})` : 'none',
-        backgroundSize: '100px 100px', // Adjust size of repeated icons
-        backgroundRepeat: 'repeat', // Tiled effect
-        backgroundPosition: 'center',
-      }}
-    >
+  className="App"
+  style={{
+    backgroundImage: selectedIcon
+      ? `url(${selectedIcon})`
+      : 'linear-gradient(to top, rgb(0, 0, 0), rgb(109, 109, 137))',
+    backgroundSize: selectedIcon ? '100px 100px' : 'cover',
+    backgroundRepeat: selectedIcon ? 'repeat' : 'no-repeat',
+    backgroundPosition: 'center',
+  }}
+>
       <Header />
       <div className="Main">
         <Sidebar

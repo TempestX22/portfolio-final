@@ -30,17 +30,22 @@ body, html {
 /* Main container for layout */
 .Main {
   display: flex;
-  flex-direction: row; /* Sidebar and content are in a row */
-  height: calc(100vh - 60px); /* Account for the header height */
-  margin-top: 60px; /* Push content below the header */
+  flex: 1;
+  flex-direction: row;
+  height: calc(100vh - 60px);
+  margin-top: 60px;
 }
+
 
 .App {
   position: relative;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.5); /* Fallback color */
-  transition: background 0.3s ease; /* Smooth background transitions */
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Sidebar styles (now below header) */
@@ -218,4 +223,6 @@ body, html {
   color: #ffffff;
   max-width: 600px;
   margin: 0 auto;
+  background-color: rgba(169, 231, 255, 0.5);
+  border-radius: 20px;
 }

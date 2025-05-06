@@ -40,6 +40,8 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
     );
   }
 
+  
+
   const items = selectedOption ? contentMapping[selectedOption] : [];
 
   // Handle click to expand image for 2D Art and 3D Art
