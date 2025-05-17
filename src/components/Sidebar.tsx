@@ -15,6 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onOptionClick }) => {
     { id: '2D Art', icon: 'imgs/2d-icon.png' },  // Path to your 2D Art icon
     { id: 'Voice Acting', icon: 'imgs/va-icon.png' },  // Path to your Voice Acting icon
     { id: 'Games', icon: 'imgs/gm-icon.png' },  // Path to your Games icon
+    { id: 'Resume', icon: 'images/pageicon.png' },
     { id: 'About Me', icon: 'imgs/user-icon.png' },  // Path to your About Me icon
   ];
 

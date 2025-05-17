@@ -36,10 +36,36 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
         I aim to bring a unique perspective and energy to everything I create.
 
         </p>
-      </div>
+
+        <div className="SocialIcons">
+    <a href="https://github.com/TempestX22" target="_blank" rel="noopener noreferrer">
+      <img src="\images\GitHub-logo.png" alt="GitHub" />
+    </a>
+    {/* <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+      <img src="/imgs/icons/twitter.png" alt="Twitter" />
+    </a> */}
+    <a href="https://www.linkedin.com/in/junior-esteban-4070x/" target="_blank" rel="noopener noreferrer">
+      <img src="/images/linkedin.png" alt="LinkedIn" />
+    </a>
+    {/* <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+      <img src="/imgs/icons/instagram.png" alt="Instagram" />
+    </a> */}
+    </div>
+    </div>
     );
   }
 
+  if (selectedOption === 'Resume') {
+    return (
+      <div className="ResumeSection">
+        <img
+          src="/images/JEResume.png" // Replace with your actual resume image path
+          alt="My Resume"
+          className="ResumeImage"
+        />
+      </div>
+    );
+  }
   
 
   const items = selectedOption ? contentMapping[selectedOption] : [];
