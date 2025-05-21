@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import Slideshow from './Slideshow';
 
 interface ContentProps {
   selectedOption: string | null;
 }
+
+ // Import at the top
+
+// Inside the component render logic
+
 
 const Content: React.FC<ContentProps> = ({ selectedOption }) => {
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
@@ -66,7 +72,10 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
       </div>
     );
   }
-  
+
+  if (!selectedOption) {
+  return <Slideshow />;
+  }
 
   const items = selectedOption ? contentMapping[selectedOption] : [];
 
