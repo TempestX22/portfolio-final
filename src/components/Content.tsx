@@ -21,7 +21,7 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
       { title: '2D Sketch 1', link: '/2d-sketch-1', img: '/imgs/2d-1.png', audio: '' },
     ],
     'Voice Acting': [
-      { title: 'Voice Clip 1', link: '', img: '', audio: '/audio/va-1.mp3' },
+      { title: 'Voice Clip 1', link: '', img: '', audio: '/audio/' },
     ],
     'Games': [
       { title: 'Space Defenders', link: '/game1.html', img: '/images/gm-tbn.png', audio: '' },
