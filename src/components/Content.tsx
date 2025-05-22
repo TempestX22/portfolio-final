@@ -18,7 +18,10 @@ const Content: React.FC<ContentProps> = ({ selectedOption }) => {
       { title: '3D Model 1', link: '/3d-model-1', img: '/imgs/3d-1.jpg', audio: '' },
     ],
     '2D Art': [
-      { title: '2D Sketch 1', link: '/2d-sketch-1', img: '/imgs/2d-1.png', audio: '' },
+      { title: 'Self Sketch', link: '/2d-sketch-1', img: '/imgs/2d-1.png', audio: '' },
+      { title: 'Anim 1', link: '/Anim 1', img: '/images/IntroAnim.gif', audio: '' },
+      { title: 'Fanmon', link: '/Fanmon', img: '/images/fanmon.png', audio: '' },
+      { title: 'Environment Art #1', link: '/environment art #1', img: '/images/environment.png', audio: '' },
     ],
     'Voice Acting': [
       { title: 'Voice Clip 1', link: '', img: '', audio: '/audio/' },
