@@ -20,6 +20,8 @@ let canvas1;
 
 let startButton;
 let restartButton;
+let showCredits = false;
+let creditButton;
 
 //preload things
 function preload ()
@@ -41,6 +43,9 @@ function setup() {
   startButton = createButton('Start');
   startButton.position(windowWidth / 2, windowHeight / 2);
 
+  creditButton = createButton('Credits');
+  creditButton.position((windowWidth / 2), (windowHeight / 2) + 100);
+
 
   // Customize button appearance
   startButton.style('background-color', '#007BFF');  // Set background color
@@ -51,6 +56,14 @@ function setup() {
   // Call start function when the start button is pressed
   startButton.mousePressed(start);
 
+  creditButton.style('background-color', '#007BFF');  // Set background color
+  creditButton.style('color', 'white');  // Set text color
+  creditButton.style('padding', '10px 20px');  // Set padding
+  creditButton.style('border-radius', '5px');  // Set rounded corners
+  creditButton.style('font-size', '18px');  // Set font size
+  // Call start function when the start button is pressed
+  creditButton.mousePressed(toggleCredits);
+
 }
   
 
@@ -58,6 +71,7 @@ function setup() {
 function start() {
   // Hide the start button
   startButton.style('display', 'none');
+  creditButton.style('display', 'none');
   startsfx.play();
   bgm.play();
 
@@ -77,6 +91,19 @@ function start() {
   }
 }
 
+function credits()
+{
+  startButton.style('display', 'none');
+  push();
+  fill(255);
+  textSize(32);
+  textFont('Courier New');
+  text("Art: Junior Esteban", (windowWidth/2), (windowHeight/2) - 100);
+  text("Coding: Junior Esteban", (windowWidth/2), (windowHeight/2) - 50);
+  text("Song: Jeremy Blake - Power Up", (windowWidth/2), (windowHeight/2));
+  pop();
+}
+
 
 function draw() {
   background(0, 0, 0);
@@ -91,6 +118,10 @@ function draw() {
   // }
   // noTint();
   // pop();
+    if(showCredits)
+    {
+      credits();
+    }
 
   // Draw the player as an image
   image(playerimg, mouseX - 50, height - 100, 100, 100); // Adjusted size and position
@@ -160,6 +191,12 @@ function draw() {
   text("Score: " + score, 20, 80);
   text("Lives: " + lives, 20, 40);
 }
+
+function toggleCredits() {
+  showCredits = !showCredits;
+  startButton.style("display", "block");
+}
+
 // Create restart button when the game is over
 function createRestartButton() {
   // Only create a new restart button if it doesn't already exist
